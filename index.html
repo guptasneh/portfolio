@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sneha Rakesh Gupta — AI &amp; Data Science Engineer</title>
+  <meta name="description" content="Sneha Rakesh Gupta is a B.Tech AI &amp; Data Science student building end-to-end ML pipelines, NLP systems, and data-driven solutions that make real impact." />
+  <meta name="author" content="Sneha Rakesh Gupta" />
+  <meta name="keywords" content="AI, Data Science, Machine Learning, NLP, TensorFlow, Scikit-learn, Python, Power BI, Streamlit, Portfolio" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sneha Rakesh Gupta — AI &amp; Data Science Engineer" />
+  <meta property="og:description" content="Building ML pipelines and data solutions that make real-world impact." />
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sneha-rakesh-gupta.dev" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@sneharakesh_ai" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <!-- CDN Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
+</head>
+<body>
+
+  <!-- ============================================================
+       PAGE LOADER — cinematic intro
+  ============================================================ -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <svg class="loader-logo" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle class="logo-ring" cx="60" cy="60" r="54" stroke="#00FFD1" stroke-width="2"/>
+        <path class="logo-path" d="M30 60 Q60 20 90 60 Q60 100 30 60Z" stroke="#00FFD1" stroke-width="2" fill="none"/>
+        <circle cx="60" cy="60" r="6" fill="#00FFD1" class="logo-dot"/>
+        <line class="logo-line" x1="60" y1="6" x2="60" y2="114" stroke="#7B61FF" stroke-width="1"/>
+        <line class="logo-line" x1="6" y1="60" x2="114" y2="60" stroke="#7B61FF" stroke-width="1"/>
+      </svg>
+      <div class="loader-text">
+        <span class="loader-name">Sneha Rakesh Gupta</span>
+        <span class="loader-role">AI &amp; Data Science</span>
+      </div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CURSOR
+  ============================================================ -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <svg viewBox="0 0 40 40" fill="none" width="40" height="40">
+          <circle cx="20" cy="20" r="18" stroke="#00FFD1" stroke-width="1.5"/>
+          <path d="M10 20 Q20 7 30 20 Q20 33 10 20Z" stroke="#00FFD1" stroke-width="1.5" fill="none"/>
+          <circle cx="20" cy="20" r="3" fill="#00FFD1"/>
+        </svg>
+        <span>SG</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#certifications" class="nav-link" data-section="certifications">Certifications</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-indicator" aria-hidden="true"></div>
+
+
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-overlay" role="dialog" aria-modal="true" aria-label="Mobile navigation" hidden>
+    <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
+    <ul class="mobile-links" role="list">
+      <li><a href="#about" class="mobile-link">01. About</a></li>
+      <li><a href="#projects" class="mobile-link">02. Projects</a></li>
+      <li><a href="#skills" class="mobile-link">03. Skills</a></li>
+      <li><a href="#experience" class="mobile-link">04. Experience</a></li>
+      <li><a href="#education" class="mobile-link">05. Education</a></li>
+      <li><a href="#certifications" class="mobile-link">06. Certifications</a></li>
+      <li><a href="#contact" class="mobile-link">07. Contact</a></li>
+    </ul>
+    <div class="mobile-socials">
+      <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">LI</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">TW</a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PARTICLES BACKGROUND
+  ============================================================ -->
+  <div id="tsparticles" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section id="hero" class="hero" aria-label="Hero section">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge" aria-live="polite">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Open to opportunities
+      </div>
+      <h1 class="hero-name" id="hero-name" aria-label="Sneha Rakesh Gupta">
+        <span class="name-line">Sneha</span>
+        <span class="name-line accent">Gupta</span>
+      </h1>
+      <div class="hero-subtitle" aria-live="polite">
+        <span class="subtitle-prefix">I am a </span>
+        <span class="hero-role" id="hero-role" aria-label="role cycler">Data Scientist</span>
+        <span class="cursor-blink" aria-hidden="true">|</span>
+      </div>
+      <p class="hero-tagline">
+        I turn messy data into intelligent systems<br />and insights that actually matter.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary magnetic" data-magnetic>
+          <span>View Projects</span>
+          <svg viewBox="0 0 24 24" fill="none" width="18" height="18" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn-secondary magnetic" data-magnetic>
+          <span>Let's Talk</span>
+        </a>
+      </div>
+      <div class="hero-scroll" aria-label="Scroll down indicator">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section id="about" class="section about-section" aria-label="About me">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">01. About</span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Photo card -->
+        <div class="about-photo-wrap" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.3">
+          <div class="about-photo-card">
+            <div class="photo-bg"></div>
+            <div class="photo-overlay"></div>
+            <div class="photo-content">
+              <div class="photo-avatar" id="photo-avatar">
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="avatar-svg">
+                  <circle cx="100" cy="80" r="45" fill="#1a1a2e" stroke="#00FFD1" stroke-width="1.5"/>
+                  <path d="M40 200 Q100 150 160 200" fill="#1a1a2e" stroke="#00FFD1" stroke-width="1.5"/>
+                  <circle cx="100" cy="80" r="20" fill="#00FFD1" opacity="0.15"/>
+                  <circle cx="85" cy="75" r="5" fill="#00FFD1"/>
+                  <circle cx="115" cy="75" r="5" fill="#00FFD1"/>
+                  <path d="M85 95 Q100 105 115 95" stroke="#00FFD1" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </svg>
+              </div>
+              <div class="photo-label">
+                <span class="label-name">Sneha Rakesh Gupta</span>
+                <span class="label-role">AI &amp; Data Science Student</span>
+              </div>
+            </div>
+            <div class="photo-corner tl"></div>
+            <div class="photo-corner tr"></div>
+            <div class="photo-corner bl"></div>
+            <div class="photo-corner br"></div>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="about-text">
+          <p class="about-bio">
+            B.Tech student specializing in <span class="accent-text">Artificial Intelligence &amp; Data Science</span>
+            at Shah And Anchor Kutchhi Engineering College (Graduating June 2027).
+            I design end-to-end ML pipelines, build predictive models, and create data dashboards that turn
+            raw numbers into decisions — using Python, TensorFlow, and Scikit-learn.
+          </p>
+          <p class="about-bio">
+            From detecting fake news with NLP to visualizing crime patterns in Power BI, I'm passionate about
+            applying AI to <span class="accent-text">real-world business and social problems</span>.
+            Selected for Smart India Hackathon's internal round and led technical team.
+          </p>
+
+          <!-- Terminal fun facts -->
+          <div class="terminal-box" id="terminal-box" aria-label="Fun facts terminal">
+            <div class="terminal-header">
+              <span class="t-dot red"></span>
+              <span class="t-dot yellow"></span>
+              <span class="t-dot green"></span>
+              <span class="t-title">sneha@portfolio:~$</span>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+              <div class="t-line">
+                <span class="t-prompt">$ </span>
+                <span class="t-cmd">cat fun_facts.txt</span>
+              </div>
+              <div class="t-output" id="terminal-output"></div>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num" data-target="5">0</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="5">0</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="2">0</span>
+              <span class="stat-label">Internships</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="15">0</span>
+              <span class="stat-label">Team Led</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS SECTION
+  ============================================================ -->
+  <section id="projects" class="section projects-section" aria-label="Projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">02. Projects</span>
+        <h2 class="section-title">What I've Built</h2>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="filter-bar" role="group" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nlp">NLP</button>
+        <button class="filter-btn" data-filter="da">Data Analytics</button>
+        <button class="filter-btn" data-filter="genai">GenAI</button>
+        <button class="filter-btn" data-filter="ml">ML / Prediction</button>
+      </div>
+
+      <!-- Project cards grid -->
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- Project 1: Fake News Detection -->
+        <article class="project-card" data-category="nlp" data-tilt data-tilt-max="8" data-tilt-speed="400">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-tag nlp">NLP</div>
+              <div class="card-icon">📰</div>
+              <h3 class="card-title">Automated News Authentication</h3>
+              <p class="card-problem">Misinformation spreads 6× faster than truth. How do you build a system that classifies fake vs. genuine news in real time, at scale?</p>
+              <div class="card-stack">
+                <span class="chip">Python</span>
+                <span class="chip">NLP</span>
+                <span class="chip">Scikit-learn</span>
+                <span class="chip">HTML/CSS/JS</span>
+                <span class="chip">API</span>
+              </div>
+              <div class="card-hover-hint">Hover to flip →</div>
+            </div>
+            <div class="card-back">
+              <div class="card-back-content">
+                <h3 class="card-back-title">News Authentication</h3>
+                <p class="card-desc">Real-time fake-news classifier using NLP and ML algorithms. Integrated reinforcement learning for adaptive model updates and deployed via a live API with an HTML/CSS/JS front-end for researcher use.</p>
+                <div class="card-metrics">
+                  <div class="metric"><span class="metric-val">Real-time</span><span class="metric-key">Classification</span></div>
+                  <div class="metric"><span class="metric-val">RL</span><span class="metric-key">Adaptive Learning</span></div>
+                  <div class="metric"><span class="metric-val">API</span><span class="metric-key">Live Deployment</span></div>
+                </div>
+                <div class="card-back-actions">
+                  <a href="https://github.com" target="_blank" rel="noopener" class="btn-ghost">GitHub →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Credit Card Fraud Detection -->
+        <article class="project-card" data-category="ml" data-tilt data-tilt-max="8" data-tilt-speed="400">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-tag ml">ML / Prediction</div>
+              <div class="card-icon">💳</div>
+              <h3 class="card-title">Credit Card Fraud Detection</h3>
+              <p class="card-problem">Financial fraud costs banks $32B yearly. Catching fraudulent transactions without drowning legitimate ones in false positives is a precision problem.</p>
+              <div class="card-stack">
+                <span class="chip">Python</span>
+                <span class="chip">Pandas</span>
+                <span class="chip">Scikit-learn</span>
+                <span class="chip">NumPy</span>
+              </div>
+              <div class="card-hover-hint">Hover to flip →</div>
+            </div>
+            <div class="card-back">
+              <div class="card-back-content">
+                <h3 class="card-back-title">Fraud Detection</h3>
+                <p class="card-desc">Analyzed transaction patterns and customer behavior to identify suspicious activity. Applied data preprocessing, feature engineering, and ML classification techniques to maximize detection accuracy while minimizing false positives.</p>
+                <div class="card-metrics">
+                  <div class="metric"><span class="metric-val">High</span><span class="metric-key">Precision</span></div>
+                  <div class="metric"><span class="metric-val">Low</span><span class="metric-key">False Positives</span></div>
+                  <div class="metric"><span class="metric-val">Feature</span><span class="metric-key">Engineering</span></div>
+                </div>
+                <div class="card-back-actions">
+                  <a href="https://github.com" target="_blank" rel="noopener" class="btn-ghost">GitHub →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Smart Event Management -->
+        <article class="project-card" data-category="genai" data-tilt data-tilt-max="8" data-tilt-speed="400">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-tag genai">GenAI</div>
+              <div class="card-icon">🗓️</div>
+              <h3 class="card-title">Smart Event Management</h3>
+              <p class="card-problem">Event coordinators juggle scheduling, attendees, routes, and resources. What if an LLM could orchestrate the chaos automatically?</p>
+              <div class="card-stack">
+                <span class="chip">LLM</span>
+                <span class="chip">Python</span>
+                <span class="chip">Streamlit</span>
+                <span class="chip">SQL</span>
+              </div>
+              <div class="card-hover-hint">Hover to flip →</div>
+            </div>
+            <div class="card-back">
+              <div class="card-back-content">
+                <h3 class="card-back-title">Smart Event Mgmt</h3>
+                <p class="card-desc">Intelligent event platform using LLM for scheduling, attendee tracking, and route optimization. Integrated automated notifications, data management, and resource planning to improve user experience end-to-end.</p>
+                <div class="card-metrics">
+                  <div class="metric"><span class="metric-val">LLM</span><span class="metric-key">Powered</span></div>
+                  <div class="metric"><span class="metric-val">Auto</span><span class="metric-key">Notifications</span></div>
+                  <div class="metric"><span class="metric-val">Route</span><span class="metric-key">Optimization</span></div>
+                </div>
+                <div class="card-back-actions">
+                  <a href="https://github.com" target="_blank" rel="noopener" class="btn-ghost">GitHub →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Water Potability -->
+        <article class="project-card" data-category="ml" data-tilt data-tilt-max="8" data-tilt-speed="400">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-tag ml">ML / Prediction</div>
+              <div class="card-icon">💧</div>
+              <h3 class="card-title">Water Potability Predictor</h3>
+              <p class="card-problem">2.2 billion people lack safe drinking water. Chemical testing is slow and expensive — can ML make safety assessment instant?</p>
+              <div class="card-stack">
+                <span class="chip">Python</span>
+                <span class="chip">Scikit-learn</span>
+                <span class="chip">Pandas</span>
+                <span class="chip">Streamlit</span>
+              </div>
+              <div class="card-hover-hint">Hover to flip →</div>
+            </div>
+            <div class="card-back">
+              <div class="card-back-content">
+                <h3 class="card-back-title">Water Potability</h3>
+                <p class="card-desc">Predictive model that determines water safety from chemical and physical parameters. Applied EDA, feature engineering, and model optimization across multiple classifiers to support reliable safe-water assessment.</p>
+                <div class="card-metrics">
+                  <div class="metric"><span class="metric-val">9+</span><span class="metric-key">Water Features</span></div>
+                  <div class="metric"><span class="metric-val">EDA</span><span class="metric-key">Deep Analysis</span></div>
+                  <div class="metric"><span class="metric-val">Multi</span><span class="metric-key">Model Compare</span></div>
+                </div>
+                <div class="card-back-actions">
+                  <a href="https://github.com" target="_blank" rel="noopener" class="btn-ghost">GitHub →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Crime Investigation Dashboard -->
+        <article class="project-card" data-category="da" data-tilt data-tilt-max="8" data-tilt-speed="400">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-tag da">Data Analytics</div>
+              <div class="card-icon">🔍</div>
+              <h3 class="card-title">Crime Investigation Dashboard</h3>
+              <p class="card-problem">Detectives drown in siloed case data. What if real-time visualization could surface hidden crime patterns before investigators even knew to look?</p>
+              <div class="card-stack">
+                <span class="chip">Power BI</span>
+                <span class="chip">DAX</span>
+                <span class="chip">SQL</span>
+                <span class="chip">Excel</span>
+              </div>
+              <div class="card-hover-hint">Hover to flip →</div>
+            </div>
+            <div class="card-back">
+              <div class="card-back-content">
+                <h3 class="card-back-title">Crime Dashboard</h3>
+                <p class="card-desc">Microsoft Power BI dashboard tracking crime patterns, trends, and case insights in real time. Analyzed case data across time, geography, and crime type to generate actionable investigative insights for law enforcement.</p>
+                <div class="card-metrics">
+                  <div class="metric"><span class="metric-val">Real-time</span><span class="metric-key">Insights</span></div>
+                  <div class="metric"><span class="metric-val">Power BI</span><span class="metric-key">Interactive</span></div>
+                  <div class="metric"><span class="metric-val">Pattern</span><span class="metric-key">Detection</span></div>
+                </div>
+                <div class="card-back-actions">
+                  <a href="https://github.com" target="_blank" rel="noopener" class="btn-ghost">GitHub →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS SECTION
+  ============================================================ -->
+  <section id="skills" class="section skills-section" aria-label="Skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">03. Skills</span>
+        <h2 class="section-title">My Toolkit</h2>
+      </div>
+
+      <div class="skills-layout">
+        <canvas id="skills-canvas" width="600" height="600" aria-hidden="true"></canvas>
+        <div class="skills-info-panel" id="skills-panel" aria-live="polite">
+          <div class="panel-default" id="panel-default">
+            <h3>Click any skill to explore</h3>
+            <p>Each node represents a tool I use daily. The orbit reflects how central each technology is to my workflow.</p>
+          </div>
+          <div class="panel-detail hidden" id="panel-detail">
+            <div class="panel-skill-icon" id="panel-icon"></div>
+            <h3 id="panel-name"></h3>
+            <div class="panel-meta">
+              <div class="panel-bar-wrap">
+                <span>Proficiency</span>
+                <div class="panel-bar"><div class="panel-bar-fill" id="panel-bar-fill"></div></div>
+                <span id="panel-pct"></span>
+              </div>
+              <div class="panel-stats">
+                <span id="panel-years"></span>
+                <span id="panel-used-in"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill categories legend -->
+      <div class="skills-legend">
+        <div class="legend-item"><span class="legend-dot core"></span>Core Languages</div>
+        <div class="legend-item"><span class="legend-dot ml"></span>ML / DL</div>
+        <div class="legend-item"><span class="legend-dot tools"></span>Tools &amp; Infra</div>
+        <div class="legend-item"><span class="legend-dot cloud"></span>Cloud &amp; Deploy</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EXPERIENCE SECTION
+  ============================================================ -->
+  <section id="experience" class="section experience-section" aria-label="Experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">04. Experience</span>
+        <h2 class="section-title">My Journey</h2>
+      </div>
+
+      <div class="timeline" role="list">
+
+        <!-- Data Science Intern -->
+        <div class="timeline-item" role="listitem" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <div class="tc-header">
+              <div class="tc-logo" aria-hidden="true">
+                <svg viewBox="0 0 50 50" fill="none" width="40" height="40">
+                  <rect x="5" y="5" width="40" height="40" rx="8" fill="#00FFD1" opacity="0.15" stroke="#00FFD1" stroke-width="1"/>
+                  <text x="25" y="32" text-anchor="middle" fill="#00FFD1" font-size="13" font-family="JetBrains Mono">DS</text>
+                </svg>
+              </div>
+              <div class="tc-meta">
+                <h3 class="tc-title">AI & Data Science Intern</h3>
+                <span class="tc-company">Dcyber Pvt. Ltd.</span>
+              </div>
+              <span class="tc-date">Aug – Oct 2025</span>
+            </div>
+            <div class="tc-body">
+              <ul class="tc-achievements">
+                <li>Executed data collection, preprocessing, and EDA to uncover actionable insights for strategic decision-making</li>
+                <li>Developed and optimized ML models using Pandas, NumPy, and Scikit-learn, improving accuracy and overall performance</li>
+              </ul>
+              <div class="tc-tags">
+                <span class="chip">Python</span>
+                <span class="chip">Scikit-learn</span>
+                <span class="chip">Pandas</span>
+                <span class="chip">NumPy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Analyst Intern: Microsoft (AICTE) -->
+        <div class="timeline-item" role="listitem" data-side="right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <div class="tc-header">
+              <div class="tc-logo" aria-hidden="true">
+                <svg viewBox="0 0 50 50" fill="none" width="40" height="40">
+                  <rect x="5" y="5" width="40" height="40" rx="8" fill="#7B61FF" opacity="0.15" stroke="#7B61FF" stroke-width="1"/>
+                  <text x="25" y="32" text-anchor="middle" fill="#7B61FF" font-size="11" font-family="JetBrains Mono">MSFT</text>
+                </svg>
+              </div>
+              <div class="tc-meta">
+                <h3 class="tc-title">Data Analyst Intern</h3>
+                <span class="tc-company">Microsoft — AICTE Program</span>
+              </div>
+              <span class="tc-date">Dec 2024 – Jan 2025</span>
+            </div>
+            <div class="tc-body">
+              <ul class="tc-achievements">
+                <li>Analyzed large datasets using Excel, SQL, and Python to identify trends and generate actionable insights</li>
+                <li>Created interactive dashboards and reports tracking KPIs, improving data visibility and decision-making efficiency</li>
+              </ul>
+              <div class="tc-tags">
+                <span class="chip">Excel</span>
+                <span class="chip">SQL</span>
+                <span class="chip">Python</span>
+                <span class="chip">Power BI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="timeline-item" role="listitem" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <div class="tc-header">
+              <div class="tc-logo" aria-hidden="true">
+                <svg viewBox="0 0 50 50" fill="none" width="40" height="40">
+                  <rect x="5" y="5" width="40" height="40" rx="8" fill="#FFA500" opacity="0.15" stroke="#FFA500" stroke-width="1"/>
+                  <text x="25" y="32" text-anchor="middle" fill="#FFA500" font-size="13" font-family="JetBrains Mono">🏆</text>
+                </svg>
+              </div>
+              <div class="tc-meta">
+                <h3 class="tc-title">Key Achievements</h3>
+                <span class="tc-company">Leadership &amp; Impact</span>
+              </div>
+              <span class="tc-date">2023 – Present</span>
+            </div>
+            <div class="tc-body">
+              <ul class="tc-achievements">
+                <li>Selected for the internal round of <strong>Smart India Hackathon</strong> based on project innovation and technical skills</li>
+                <li>Led a team to successfully execute technical initiatives and social impact projects</li>
+                <li>Delivered analytical reports supporting data-driven decisions for college events</li>
+                <li>Coordinated cross-functional teams ensuring smooth collaboration and successful project execution</li>
+              </ul>
+              <div class="tc-tags">
+                <span class="chip">SIH</span>
+                <span class="chip">Team Lead</span>
+                <span class="chip">Leadership</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EDUCATION SECTION
+  ============================================================ -->
+  <section id="education" class="section education-section" aria-label="Education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">05. Education</span>
+        <h2 class="section-title">Academic Background</h2>
+      </div>
+
+      <div class="timeline" role="list">
+        <!-- Education -->
+        <div class="timeline-item" role="listitem" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <div class="tc-header">
+              <div class="tc-logo" aria-hidden="true">
+                <svg viewBox="0 0 50 50" fill="none" width="40" height="40">
+                  <rect x="5" y="5" width="40" height="40" rx="8" fill="#7B61FF" opacity="0.1" stroke="#7B61FF" stroke-width="1"/>
+                  <text x="25" y="32" text-anchor="middle" fill="#7B61FF" font-size="14" font-family="JetBrains Mono">EDU</text>
+                </svg>
+              </div>
+              <div class="tc-meta">
+                <h3 class="tc-title">B.Tech — AI &amp; Data Science</h3>
+                <span class="tc-company">Shah And Anchor Kutchhi Engineering College</span>
+              </div>
+              <span class="tc-date">2023 – June 2027</span>
+            </div>
+            <div class="tc-body">
+              <ul class="tc-achievements">
+                <li>Specialization in Artificial Intelligence and Data Science</li>
+                <li>Core coursework: ML Algorithms, Deep Learning, NLP, Data Engineering, Computer Vision</li>
+                <li>Active contributor to technical clubs and cross-departmental initiatives</li>
+              </ul>
+              <div class="tc-tags">
+                <span class="chip">AI &amp; DS</span>
+                <span class="chip">SAKEC</span>
+                <span class="chip">2027</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CERTIFICATIONS SECTION
+  ============================================================ -->
+  <section id="certifications" class="section certs-section" aria-label="Certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">06. Certifications</span>
+        <h2 class="section-title">Credentials</h2>
+      </div>
+      <div class="certs-grid">
+
+        <div class="cert-card glass-card" data-tilt data-tilt-max="6" data-tilt-speed="400">
+          <div class="cert-icon">🏅</div>
+          <div class="cert-body">
+            <span class="cert-issuer">AI Certs</span>
+            <h3 class="cert-name">Data Science Certification</h3>
+          </div>
+        </div>
+
+        <div class="cert-card glass-card" data-tilt data-tilt-max="6" data-tilt-speed="400">
+          <div class="cert-icon">🔵</div>
+          <div class="cert-body">
+            <span class="cert-issuer">Infosys Springboard</span>
+            <h3 class="cert-name">Data Analytics</h3>
+          </div>
+        </div>
+
+        <div class="cert-card glass-card" data-tilt data-tilt-max="6" data-tilt-speed="400">
+          <div class="cert-icon">📊</div>
+          <div class="cert-body">
+            <span class="cert-issuer">Pragmatics</span>
+            <h3 class="cert-name">Microsoft Power BI</h3>
+          </div>
+        </div>
+
+        <div class="cert-card glass-card" data-tilt data-tilt-max="6" data-tilt-speed="400">
+          <div class="cert-icon">🤖</div>
+          <div class="cert-body">
+            <span class="cert-issuer">IBM</span>
+            <h3 class="cert-name">AI Badge</h3>
+          </div>
+        </div>
+
+        <div class="cert-card glass-card" data-tilt data-tilt-max="6" data-tilt-speed="400">
+          <div class="cert-icon">☁️</div>
+          <div class="cert-body">
+            <span class="cert-issuer">AWS Academy</span>
+            <h3 class="cert-name">Generative AI</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section id="contact" class="section contact-section" aria-label="Contact">
+    <div class="contact-mesh" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">07. Contact</span>
+        <h2 class="section-title">Let's Build Together</h2>
+        <p class="section-sub">Whether it's a research collaboration, an internship opportunity, or just a great conversation about AI &amp; data — my inbox is always open.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-form-wrap">
+          <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
+            <div class="form-group">
+              <input type="text" id="form-name" name="name" required autocomplete="name" placeholder=" " aria-required="true"/>
+              <label for="form-name" class="form-label">Your Name</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group">
+              <input type="email" id="form-email" name="email" required autocomplete="email" placeholder=" " aria-required="true"/>
+              <label for="form-email" class="form-label">Email Address</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" id="form-subject" name="subject" placeholder=" " />
+              <label for="form-subject" class="form-label">Subject</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group">
+              <textarea id="form-message" name="message" rows="5" required placeholder=" " aria-required="true"></textarea>
+              <label for="form-message" class="form-label">Message</label>
+              <div class="form-line"></div>
+            </div>
+            <button type="submit" id="form-submit" class="btn-primary submit-btn">
+              <span class="submit-text">Send Message</span>
+              <span class="submit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                  <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="submit-check hidden" aria-hidden="true">✓</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-card glass-card">
+            <h3>Find me online</h3>
+            <div class="contact-links">
+              <a href="https://github.com" target="_blank" rel="noopener" class="contact-link" aria-label="GitHub profile">
+                <div class="cl-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.137 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                </div>
+                <div class="cl-text">
+                  <span class="cl-label">GitHub</span>
+                  <span class="cl-val">@sneha-gupta</span>
+                </div>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-link" aria-label="LinkedIn profile">
+                <div class="cl-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </div>
+                <div class="cl-text">
+                  <span class="cl-label">LinkedIn</span>
+                  <span class="cl-val">Sneha Gupta</span>
+                </div>
+              </a>
+              <a href="mailto:sneharakeshgupta@gmail.com" class="contact-link" aria-label="Email Sneha">
+                <div class="cl-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="22" height="22"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="cl-text">
+                  <span class="cl-label">Email</span>
+                  <span class="cl-val">sneharakeshgupta@gmail.com</span>
+                </div>
+              </a>
+            </div>
+            <div class="availability-badge">
+              <span class="badge-dot"></span>
+              Available for opportunities
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">© 2026 Sneha Gupta. Crafted with <span class="accent-text">obsession</span>.</p>
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.137 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.738-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       MATRIX EASTER EGG CANVAS
+  ============================================================ -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <!-- JS Modules -->
+  <script src="js/cursor.js" defer></script>
+  <script src="js/three-scene.js" defer></script>
+  <script src="js/typewriter.js" defer></script>
+  <script src="js/skills-orbit.js" defer></script>
+  <script src="js/projects.js" defer></script>
+  <script src="js/contact.js" defer></script>
+  <script src="js/easter-egg.js" defer></script>
+  <script src="js/gsap-animations.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

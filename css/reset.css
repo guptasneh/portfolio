@@ -1,0 +1,174 @@
+/* ============================================================
+   RESET + DESIGN TOKENS
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ── Colours ── */
+  --clr-bg:          #0A0A0F;
+  --clr-bg-2:        #0D0D18;
+  --clr-bg-card:     rgba(255, 255, 255, 0.04);
+  --clr-teal:        #00FFD1;
+  --clr-teal-dim:    rgba(0, 255, 209, 0.15);
+  --clr-teal-glow:   rgba(0, 255, 209, 0.35);
+  --clr-purple:      #7B61FF;
+  --clr-purple-dim:  rgba(123, 97, 255, 0.15);
+  --clr-purple-glow: rgba(123, 97, 255, 0.35);
+  --clr-white:       #FFFFFF;
+  --clr-text:        #C8D6E5;
+  --clr-text-muted:  #6B7A99;
+  --clr-border:      rgba(255, 255, 255, 0.08);
+  --clr-border-teal: rgba(0, 255, 209, 0.2);
+
+  /* ── Typography ── */
+  --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Fira Code', monospace;
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+  --fw-black:   900;
+
+  /* ── Spacing ── */
+  --sp-xs:  0.25rem;
+  --sp-sm:  0.5rem;
+  --sp-md:  1rem;
+  --sp-lg:  1.5rem;
+  --sp-xl:  2rem;
+  --sp-2xl: 3rem;
+  --sp-3xl: 5rem;
+  --sp-4xl: 8rem;
+
+  /* ── Radius ── */
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   16px;
+  --r-xl:   24px;
+  --r-full: 9999px;
+
+  /* ── Transitions ── */
+  --tr-fast:   0.15s ease;
+  --tr-med:    0.3s ease;
+  --tr-slow:   0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* ── Shadows / Glows ── */
+  --glow-teal:   0 0 20px rgba(0, 255, 209, 0.4), 0 0 60px rgba(0, 255, 209, 0.15);
+  --glow-purple: 0 0 20px rgba(123, 97, 255, 0.4), 0 0 60px rgba(123, 97, 255, 0.15);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-lift: 0 24px 64px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 255, 209, 0.15);
+
+  /* ── Z-indices ── */
+  --z-base:    1;
+  --z-card:    10;
+  --z-nav:     100;
+  --z-modal:   200;
+  --z-loader:  300;
+  --z-cursor:  400;
+  --z-matrix:  250;
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none; /* custom cursor */
+}
+
+body.loading {
+  overflow: hidden;
+}
+
+img, video, canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: none;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul, ol { list-style: none; }
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ── Utilities ── */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--sp-xl);
+}
+
+.section {
+  padding-block: var(--sp-4xl);
+  position: relative;
+}
+
+.hidden { display: none !important; }
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.accent-text { color: var(--clr-teal); }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--clr-bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--clr-teal-dim);
+  border-radius: var(--r-full);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--clr-teal); }
+
+/* ── Selection ── */
+::selection {
+  background: var(--clr-teal-dim);
+  color: var(--clr-teal);
+}
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--clr-teal);
+  outline-offset: 4px;
+  border-radius: var(--r-sm);
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

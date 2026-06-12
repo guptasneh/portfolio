@@ -1,0 +1,216 @@
+/* ============================================================
+   ANIMATIONS — Keyframes + GSAP helpers + Reduced-motion
+   ============================================================ */
+
+/* ── Keyframes ─────────────────────────────────────────────── */
+
+@keyframes draw-circle {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes draw-path {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fade-in-scale {
+  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: scale(0.5); }
+}
+
+@keyframes slide-up-fade {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes progress-fill {
+  to { width: 100%; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(40, 202, 65, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(40, 202, 65, 0);
+    transform: scale(1.15);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50%       { opacity: 0.4; transform: scaleY(0.6); }
+}
+
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes orbit-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes counter-orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-r)) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(var(--orbit-r)) rotate(-360deg); }
+}
+
+@keyframes glitch-1 {
+  0%   { clip-path: inset(20% 0 60% 0); transform: translate(-4px, 0); }
+  20%  { clip-path: inset(80% 0 10% 0); transform: translate(4px, 0); }
+  40%  { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 0); }
+  60%  { clip-path: inset(10% 0 70% 0); transform: translate(2px, 0); }
+  80%  { clip-path: inset(60% 0 20% 0); transform: translate(0px, 0); }
+  100% { clip-path: inset(0% 0 0% 0);   transform: translate(0px, 0); }
+}
+
+@keyframes glitch-2 {
+  0%   { clip-path: inset(70% 0 10% 0); transform: translate(4px, 0);  color: #ff00ff; }
+  25%  { clip-path: inset(10% 0 60% 0); transform: translate(-4px, 0); color: #00ffff; }
+  50%  { clip-path: inset(50% 0 30% 0); transform: translate(2px, 0);  color: #ff00ff; }
+  75%  { clip-path: inset(30% 0 50% 0); transform: translate(-2px, 0); color: #00ffff; }
+  100% { clip-path: inset(0% 0 0% 0);   transform: translate(0px, 0);  color: transparent; }
+}
+
+@keyframes mesh-shift {
+  0%   { opacity: 0.8; transform: scale(1) rotate(0deg); }
+  100% { opacity: 1;   transform: scale(1.05) rotate(2deg); }
+}
+
+@keyframes mobile-slide-in {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes terminal-line-in {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes card-float-a {
+  0%, 100% { transform: translateY(0px) rotateX(0deg); }
+  50%       { transform: translateY(-8px) rotateX(2deg); }
+}
+
+@keyframes card-float-b {
+  0%, 100% { transform: translateY(-6px) rotateX(1deg); }
+  50%       { transform: translateY(4px) rotateX(-1deg); }
+}
+
+@keyframes neon-pulse {
+  0%, 100% { box-shadow: 0 0 5px var(--clr-teal-glow), 0 0 20px var(--clr-teal-dim); }
+  50%       { box-shadow: 0 0 15px var(--clr-teal-glow), 0 0 40px var(--clr-teal-dim); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Section reveal helper ─────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.23,1,0.32,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.23,1,0.32,1);
+}
+
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.23,1,0.32,1);
+}
+
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* ── Glitch text ────────────────────────────────────────────── */
+.glitch-active {
+  position: relative;
+}
+
+.glitch-active::before,
+.glitch-active::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.glitch-active::before {
+  animation: glitch-1 0.4s steps(1) forwards;
+  color: var(--clr-teal);
+  z-index: 1;
+}
+
+.glitch-active::after {
+  animation: glitch-2 0.4s steps(1) forwards;
+  color: var(--clr-purple);
+  z-index: 2;
+}
+
+/* ── Magnetic button helper ──────────────────────────────────── */
+[data-magnetic] {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+
+/* ── Tilt JS override ─────────────────────────────────────────── */
+.js-tilt-glare-inner {
+  background: linear-gradient(0deg, rgba(0,255,209,0.05) 0%, rgba(255,255,255,0.08) 100%) !important;
+}
+
+/* ── Particles canvas ─────────────────────────────────────────── */
+#tsparticles canvas {
+  position: fixed !important;
+}
+
+/* ── GSAP initial states ──────────────────────────────────────── */
+.gsap-from-bottom { opacity: 0; transform: translateY(60px); }
+.gsap-from-left   { opacity: 0; transform: translateX(-60px); }
+.gsap-from-right  { opacity: 0; transform: translateX(60px); }
+
+/* ── Reduced motion ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right { transition: opacity 0.3s ease; transform: none; }
+
+  .reveal.visible,
+  .reveal-left.visible,
+  .reveal-right.visible { transform: none; }
+
+  .badge-dot { animation: none; box-shadow: none; }
+  .scroll-line { animation: none; }
+  .cursor-blink { animation: none; opacity: 1; }
+  .loader-progress { animation: none; width: 100%; }
+  #matrix-canvas { display: none !important; }
+  .card-inner { transition: none; }
+  .glitch-active::before,
+  .glitch-active::after { display: none; }
+}
